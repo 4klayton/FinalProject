@@ -1,0 +1,278 @@
+:root {
+    --color01: #faf187;
+    --color02: #a8763e;
+    --color03: #6f1a07;
+    --color04: #2b2118;
+    --color05: #1b2f33;
+    --color06: white;
+}
+
+.container {
+    border: var(--color03) solid 2px;
+    margin: 10px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    /* width: 800px; */
+}
+
+.logo {
+    background-image: url(/images/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: var(--color03);
+    height: 200px;
+    width: 350px;
+    flex: 1;
+}
+
+.tagline {
+    background-color: var(--color03);
+    height: 200px;
+    font-size: 45px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    color: #FAF187;
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a, #PostButton {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 30px;
+    vertical-align: middle;
+    display: inline-block;
+    color: var(--color0);
+}
+
+/* nav a:visited {
+    color: var(--color04);
+} */
+
+/* segunda part do nav */
+
+.navbar {
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--color02);
+}
+
+.navAdmin {
+    padding: 0;
+    margin: 20px auto;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+nav>ul>li, #PostButton {
+    display: flex;
+    align-items: center;
+    position: relative;
+    border: solid var(--color04) 2px;
+    margin: 5px 10px;
+    height: 40px;
+    background-color: var(--color01);
+    color: var(--color04);
+}
+
+.adminButtons {
+    background-color: var(--color03);
+    color: var(--color06);
+    height: 30px ;
+}
+
+nav>ul>li:hover, #PostButton:hover, .buttonListAll:hover {
+    text-decoration:underline;
+}
+
+nav ul li ul {
+    width:max-content;
+    position: absolute;
+    top: 40px;
+    left: 5px;
+    text-align: left;
+    background-color: var(--color03);
+    box-shadow: 0 0 5px var(--color03);
+    display: none;
+    list-style: none;
+    padding-left: 0;
+}
+nav ul li ul a {
+    color: var(--color06);
+    padding: 10px;
+    display: block;
+}
+
+.buttonListAll {
+    color: var(--color04);
+    background-color: var(--color01);
+}
+
+
+nav ul li ul li:hover a:hover {
+    color: var(--color04);
+    background-color: var(--color01);
+    
+}
+
+nav ul li:hover ul {
+    opacity: 1;
+    max-height: 300px;
+    display: block;
+    list-style: none;
+    z-index: 999;
+}
+
+main {
+    min-height: 500px;
+}
+
+.postContent{
+    border: var(--color02) solid 3px;
+}
+h1 {
+    text-align: center;
+}
+
+.postImage {
+    height: 200px;
+    border-radius: 30px;
+    display: block;
+    margin: 15px auto 30px;
+}
+
+.postText {
+    margin: 20px 100px 150px;
+    color: var(--color04);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+}
+
+footer {
+    background-color: var(--color03);
+    height: 50px;
+    color: var(--color01);
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.listItem{
+    border: solid 3px var(--color04);
+    border-radius: 15px;
+    /* height: 250px; */
+    width: 120px;
+    margin: 20px;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.listItem img{
+    height: 50px;
+    margin: auto;
+    display: block;
+}
+
+.truncatedTitleText {
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    -webkit-line-clamp: 2; /* Número de linhas que deseja exibir */
+    max-height: 40px; /* Altura máxima equivalente a duas linhas */
+    min-height: 40px;
+}
+
+.boxConfirmation{
+    border: var(--color04) solid 3px;
+    margin: 10px 70px;
+}
+
+.userNameLoginMessage {
+    text-decoration: underline;
+}
+
+.confirmationDetails {
+    text-align: center;
+}
+
+.addPostBox, .editPostBox {
+    border: var(--color04) solid 3px;
+    margin: 10px 70px;
+    border-radius: 10px;
+}
+.PostForm > div{
+    padding: 10px;
+}
+.formHeader{
+    display: block;
+    margin: auto;
+    width: 470px;
+}
+.field label{
+    width: 110px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px;
+}
+.field input {
+    width: 300px;
+    margin: 10px;
+}
+
+#PostButton {
+    display: block;
+    margin: auto;
+}
+.dateHour {
+    text-align: center;
+}
+.loginBox {
+    border: solid 3px var(--color04);
+    border-radius: 15px;
+    width: 500px;
+    margin: 50px auto;
+    display: block;
+    text-align: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.fieldLoginPage label {
+    width: 100px;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    font-weight: bold;
+}
+.fieldLoginPage input {
+    width: 200px;
+    margin: 10px;
+}
+
+.formLogin input[type="submit"] {
+    width: 40%;
+    margin: 30px;
+}
+
+.listPostBox {
+    text-align: center;
+}
+h3 {
+    text-align: center;
+}

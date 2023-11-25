@@ -1,0 +1,87 @@
+<% 
+if (slug == "slug" && listPosts.length > 0) {
+    if (slug == "slug") {
+        i = listPosts.length-1
+        var postDate = `${listPosts[i].postDate.getDate()}/${listPosts[i].postDate.getMonth()+1}/${listPosts[i].postDate.getFullYear()}`;
+        var postHour = `${listPosts[i].postDate.getHours()}:${listPosts[i].postDate.getMinutes()}`;
+        var postFound = {
+            postTitle: listPosts[i].postTitle,
+            postImageName: listPosts[i].postImageName,
+            postText:  listPosts[i].postText,
+        }
+    } 
+} else if (postFound) {
+    var postDate = `${postFound.postDate.getDate()}/${postFound.postDate.getMonth()+1}/${postFound.postDate.getFullYear()}`;
+    var postHour = `${postFound.postDate.getHours()}:${postFound.postDate.getMinutes()}`;
+}
+%>
+<% 
+    if (listPosts.length == 0) {
+        var postFound = {
+            postTitle: 'There is no post on our database',
+            postImageName: '/images/default.jpg',
+            postText:  '',
+        }
+        var postDate = '';
+        var postHour = '';
+    }
+    
+
+%>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EASYCOOK</title>
+    <link rel="stylesheet" href="/style/normalize.css">
+    <link rel="stylesheet" href="/style/style.css">
+
+</head>
+
+<body>
+
+    
+    <div class="container">
+        <%- include("./layouts/header") %>
+        <%- include("./layouts/nav") %>
+
+        <main>
+
+           
+                <div class="postContent">
+    
+                    <h1 class="postTitle"> <%= postFound.postTitle %> </h1>
+                    
+                    <%  if (listPosts.length == 0) { %>
+                        <img class="postImage" src="<%= postFound.postImageName %>" alt="">
+                    <% } else { %>
+                    <img class="postImage" src="<%= '/uploads/' + postFound.postImageName %>" alt="">
+                    <% } %>
+    
+                    <div class="postText">
+                        <p><%- postFound.postText %></p>
+                    </div>
+                    <div>
+                        <p class="dateHour"><%- postDate + " " + postHour %></p>
+                    </div>
+                </div>
+
+         
+
+        
+
+
+        </main>
+        <%- include("./layouts/footer") %>
+    </div>
+<!-- 
+    <script>
+        history.replaceState({}, document.title, "/index");
+    </script> -->
+
+</body>
+
+</html>

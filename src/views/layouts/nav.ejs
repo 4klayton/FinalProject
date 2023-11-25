@@ -1,0 +1,20 @@
+<nav>
+    <ul class="navbar">
+        <li><a href="/singlePost/slug">Home</a></li>
+        <li>
+            <a href="/multiPost">Previous Posts</a>
+            <ul>
+                <% for (let i=listPosts.length-2; i >= 0; i--) {%>
+                    <li><a class="subMainNav" href="/singlePost/<%= listPosts[i].slug %>"><%= listPosts[i].postTitle %></a></li>
+                    <% if (i == listPosts.length-6) { %>
+                        <li><a class = "buttonListAll" href="/listPost">All posts</a></li>
+                        <% break;%>
+                    <% } %>
+                <% } %>
+               
+             
+            </ul>
+        </li>
+        <li><a href="/admin">Admin</a></li>
+    </ul>
+</nav>

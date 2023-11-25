@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EASYCOOK</title>
+    <link rel="stylesheet" href="/style/normalize.css">
+    <link rel="stylesheet" href="/style/style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <%- include("./layouts/header") %>
+        <%- include("./layouts/nav") %>
+    
+        <main>
+            <div class="editPostBox">
+                <%- include("./layouts/navAdmin") %>
+                
+                <h1>Edit Post</h1>
+                <p class="errors"></p>
+                <form class="PostForm" action="/editPost/<%= postFound.slug %>" method="POST" enctype="multipart/form-data">
+                    <div class="formHeader">
+                        <div class="field">
+                            <label for="postTitle">Post Title</label>
+                            <input type="text" name="postTitle" id="postTitle" value="<%= postFound.postTitle %>">
+                        </div>
+                        <div class="field">
+                            <label for="slug">Slug Post</label>
+                            <input type="text" name="slug" id="slug" value="<%= postFound.slug %>">
+                        </div>
+                        <div class="field">
+                            <label for="postImage">Post Image</label>
+                            <input type="file" id="postImage" name="postImage">
+                        </div>
+                    </div>
+                    <div class="formPostText">
+                        <input type="text" name="postText" id="postText" value="<%= postFound.postText %>">
+                    </div>
+                    <div class="formPostButton">
+                        <input type="submit" id="PostButton" value="Update">
+                    </div>
+                </form>
+            </div>
+
+
+        </main>
+        <%- include("./layouts/footer") %>
+    </div>
+
+    <%- include("./layouts/tinymce") %>
+</body>
+
+</html>
